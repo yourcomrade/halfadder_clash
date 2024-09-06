@@ -1,0 +1,80 @@
+{
+    "components": [
+        "halfAdder"
+    ],
+    "dependencies": {
+        "transitive": []
+    },
+    "domains": {
+        "IntelSystem": {
+            "active_edge": "Rising",
+            "init_behavior": "Defined",
+            "period": 10000,
+            "reset_kind": "Asynchronous",
+            "reset_polarity": "ActiveHigh"
+        },
+        "System": {
+            "active_edge": "Rising",
+            "init_behavior": "Defined",
+            "period": 10000,
+            "reset_kind": "Asynchronous",
+            "reset_polarity": "ActiveHigh"
+        },
+        "XilinxSystem": {
+            "active_edge": "Rising",
+            "init_behavior": "Defined",
+            "period": 10000,
+            "reset_kind": "Synchronous",
+            "reset_polarity": "ActiveHigh"
+        }
+    },
+    "files": [
+        {
+            "name": "halfAdder_shim.cpp",
+            "sha256": "42f744e20996d487b8a56f79fd2bcaac18ed605b1f7a1262dc850f5cfe95ca66"
+        },
+        {
+            "name": "halfAdder.v",
+            "sha256": "0b0900589d85a63e0fee95749ea5057cf1fdc8f08423a8ef8bbc0f897cbf1119"
+        }
+    ],
+    "flags": [
+        20,
+        20
+    ],
+    "hash": "dcbade519611f3b2d5f3ca316ab7635b5d0ffc30ad4e8189e225fd09795dce72",
+    "top_component": {
+        "name": "halfAdder",
+        "ports_flat": [
+            {
+                "direction": "in",
+                "is_clock": false,
+                "name": "a",
+                "type_name": "",
+                "width": 1
+            },
+            {
+                "direction": "in",
+                "is_clock": false,
+                "name": "b",
+                "type_name": "",
+                "width": 1
+            },
+            {
+                "direction": "out",
+                "is_clock": false,
+                "name": "sum",
+                "type_name": "",
+                "width": 1
+            },
+            {
+                "direction": "out",
+                "is_clock": false,
+                "name": "carry",
+                "type_name": "",
+                "width": 1
+            }
+        ]
+    },
+    "version": "unstable"
+}

@@ -1,0 +1,6 @@
+questasim/
+dist/
+dist-newstyle/*
+.ghc*
+
+

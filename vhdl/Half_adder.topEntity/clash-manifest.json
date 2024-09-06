@@ -1,0 +1,80 @@
+{
+    "components": [
+        "halfAdder"
+    ],
+    "dependencies": {
+        "transitive": []
+    },
+    "domains": {
+        "IntelSystem": {
+            "active_edge": "Rising",
+            "init_behavior": "Defined",
+            "period": 10000,
+            "reset_kind": "Asynchronous",
+            "reset_polarity": "ActiveHigh"
+        },
+        "System": {
+            "active_edge": "Rising",
+            "init_behavior": "Defined",
+            "period": 10000,
+            "reset_kind": "Asynchronous",
+            "reset_polarity": "ActiveHigh"
+        },
+        "XilinxSystem": {
+            "active_edge": "Rising",
+            "init_behavior": "Defined",
+            "period": 10000,
+            "reset_kind": "Synchronous",
+            "reset_polarity": "ActiveHigh"
+        }
+    },
+    "files": [
+        {
+            "name": "halfAdder_types.vhdl",
+            "sha256": "ef1e153e90e58a2dd3822dd3200976a266c28a37eceb14ffc9e8b5190c73ed2a"
+        },
+        {
+            "name": "halfAdder.vhdl",
+            "sha256": "eee85777faf74f3022bf02c6d19b3d26522a82b3f55fbe099297e33e06b4cc03"
+        }
+    ],
+    "flags": [
+        20,
+        20
+    ],
+    "hash": "ab4199e8fb0d0cc46d724475beb10ee526991c9c39849ae4042c299f3c9745cf",
+    "top_component": {
+        "name": "halfAdder",
+        "ports_flat": [
+            {
+                "direction": "in",
+                "is_clock": false,
+                "name": "a",
+                "type_name": "std_logic",
+                "width": 1
+            },
+            {
+                "direction": "in",
+                "is_clock": false,
+                "name": "b",
+                "type_name": "std_logic",
+                "width": 1
+            },
+            {
+                "direction": "out",
+                "is_clock": false,
+                "name": "sum",
+                "type_name": "std_logic",
+                "width": 1
+            },
+            {
+                "direction": "out",
+                "is_clock": false,
+                "name": "carry",
+                "type_name": "std_logic",
+                "width": 1
+            }
+        ]
+    },
+    "version": "unstable"
+}
