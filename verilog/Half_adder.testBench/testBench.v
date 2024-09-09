@@ -18,15 +18,19 @@ module testBench
   wire  f1;
   wire [1:0] \Half_adder.testBench2 ;
   wire  \Half_adder.testBench3 ;
-  wire  \Half_adder.testBench12 ;
+  wire  \Half_adder.testBench15 ;
   wire [1:0] c$ds_app_arg_0;
   wire  c$ds_app_arg_1;
   reg [1:0] s_0 = 2'd0;
+  wire [1:0] c$ds_app_arg_2;
+  wire  c$ds_app_arg_3;
+  reg [1:0] s_1 = 2'd0;
   wire  \Half_adder.testBench_clk ;
   wire  \Half_adder.testBench10 ;
   wire  \c$Half_adder.testBench_app_arg ;
   wire [7:0] c$vecFlat;
   wire [3:0] c$vecFlat_0;
+  wire [3:0] c$vecFlat_1;
 
   assign z = s + 2'd1;
 
@@ -80,12 +84,12 @@ module testBench
   assign f1 = \f' ;
   // assert end
 
-  assign \Half_adder.testBench2  = {\Half_adder.testBench12 ,
+  assign \Half_adder.testBench2  = {\Half_adder.testBench15 ,
                                     \Half_adder.testBench3 };
 
-  assign \Half_adder.testBench3  = c$ds_app_arg_1 & c$ds_app_arg_1;
+  assign \Half_adder.testBench3  = c$ds_app_arg_3 & c$ds_app_arg_1;
 
-  assign \Half_adder.testBench12  = c$ds_app_arg_1 ^ c$ds_app_arg_1;
+  assign \Half_adder.testBench15  = c$ds_app_arg_3 ^ c$ds_app_arg_1;
 
   assign c$ds_app_arg_0 = (s_0 < 2'd3) ? (s_0 + 2'd1) : s_0;
 
@@ -109,6 +113,32 @@ module testBench
       s_0 <= 2'd0;
     end else begin
       s_0 <= c$ds_app_arg_0;
+    end
+  end
+  // register end
+
+  assign c$ds_app_arg_2 = (s_1 < 2'd3) ? (s_1 + 2'd1) : s_1;
+
+  assign c$vecFlat_1 = {1'b0,   1'b1,   1'b0,
+                        1'b1};
+
+  // index begin
+  wire  vecArray_1 [0:4-1];
+  genvar i_1;
+  generate
+  for (i_1=0; i_1 < 4; i_1=i_1+1) begin : mk_array_1
+    assign vecArray_1[(4-1)-i_1] = c$vecFlat_1[i_1*1+:1];
+  end
+  endgenerate
+  assign c$ds_app_arg_3 = vecArray_1[($unsigned({{(64-2) {1'b0}},s_1}))];
+  // index end
+
+  // register begin
+  always @(posedge \Half_adder.testBench_clk  or  posedge  \c$Half_adder.testBench_app_arg ) begin : s_1_register
+    if ( \c$Half_adder.testBench_app_arg ) begin
+      s_1 <= 2'd0;
+    end else begin
+      s_1 <= c$ds_app_arg_2;
     end
   end
   // register end

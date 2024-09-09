@@ -42,7 +42,7 @@
         20,
         20
     ],
-    "hash": "dcbade519611f3b2d5f3ca316ab7635b5d0ffc30ad4e8189e225fd09795dce72",
+    "hash": "6cbf59f09fa65c731a8baac36dab3e379ea8983eb8ba6e062512411dad2a50ed",
     "top_component": {
         "name": "halfAdder",
         "ports_flat": [

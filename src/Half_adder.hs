@@ -25,7 +25,7 @@ topEntity a b = halfAdder a b
 testBench ::  Signal System Bool
 testBench = done
   where
-    a_input = stimuliGenerator clk rst $(listToVecTH [ 0::Bit , 0, 1, 1])
+    a_input = stimuliGenerator clk rst $(listToVecTH [ 0::Bit , 1, 0, 1])
     b_input = stimuliGenerator clk rst $(listToVecTH [ 0::Bit, 0, 1, 1])
     expectOutputArr = outputVerifier' clk rst $(listToVecTH [(0::Bit, 0::Bit), (1, 0), (1, 0), (0, 1)])
     
